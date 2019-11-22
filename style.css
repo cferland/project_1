@@ -1,0 +1,12 @@
+@media (min-width: 600px) {
+  body {
+    background: #aaaaee;
+    font-family: fantasy;
+    padding: 50px;
+  }
+}
+
+body {
+  text-align: center;
+  margin: 0 auto;
+}
