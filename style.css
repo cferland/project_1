@@ -1,12 +1,56 @@
 @media (min-width: 600px) {
   body {
-    background: #aaaaee;
+    background: #7057a0;
+    color: #eeffaa;
     font-family: fantasy;
-    padding: 50px;
+    padding: 30px;
   }
 }
 
 body {
   text-align: center;
   margin: 0 auto;
+}
+
+.spread {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  padding: 30px;
+}
+
+.card {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  width: 150px;
+  margin: 0 15px;
+}
+
+.card-back {
+  width: 150px;
+  height: 250px;
+  border-radius: 15px;
+  background-color: gold;
+  background-image: repeating-linear-gradient(60deg, transparent 50%,
+  rgb(255, 255, 255,1)), repeating-linear-gradient(300deg, transparent 50%,
+  rgb(255, 255, 255,1));
+  background-size: 150px 250px;
+}
+
+.crop {
+  overflow: hidden;
+  border-radius: 15px;
+  width: 150px;
+  height: 250px;
+  display: inline-block;
+  position: relative;
+}
+
+img {
+  width: 156px;
+  height: 256px;
+  position: relative;
+  margin-left: -3px;
+  margin-top: -3px;
 }
