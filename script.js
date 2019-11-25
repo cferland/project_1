@@ -33,12 +33,26 @@ document.querySelector('button').addEventListener('click', async function (event
   const cardArray = document.querySelectorAll('.card');
   for (let i = 0; i < cardArray.length; i++) {
     const cardName = result.data.cards[i].name;
-    const cardDesc = result.data.cards[i].meaning_up;
+    let cardDesc;
     const cardRef = result.data.cards[i].name_short;
     const cardContainer = document.createElement('div');
     cardContainer.classList.add('hidden');
-    cardContainer.innerHTML = `<h3>${cardName}</h3><p>${cardDesc}</p>`;
     cardArray[i].querySelector('.crop').innerHTML = `<img src="images/${cardRef}.jpg">`;
+
+    //add chance for reversed cards
+    //rotate card image if reversed
+
+    if (Math.random() >= 0.3) {
+      cardDesc = result.data.cards[i].meaning_up;
+      cardContainer.innerHTML = `<h3>${cardName}</h3><p>${cardDesc}</p>`;
+    } else {
+      cardDesc = result.data.cards[i].meaning_rev;
+      cardContainer.innerHTML = `<h3>${cardName}, Reversed</h3><p>${cardDesc}</p>`;
+      cardArray[i].querySelector('.crop').style.transform = 'rotate(180deg)';
+    }
+
+    //display cards when clicked
+
     cardArray[i].appendChild(cardContainer);  
     cardArray[i].addEventListener('click', function (event) {
       cardArray[i].querySelector('.crop').classList.add('fade-in');
