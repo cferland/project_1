@@ -12,6 +12,11 @@ body {
   margin: 0 auto;
 }
 
+.hidden {
+  opacity: 0;
+  transition: opacity 2s ease-in;
+}
+
 .spread {
   display: flex;
   flex-flow: row nowrap;
@@ -28,6 +33,7 @@ body {
 }
 
 .card-back {
+  opacity: 0;
   width: 150px;
   height: 250px;
   border-radius: 15px;
@@ -36,15 +42,18 @@ body {
   rgb(255, 255, 255,1)), repeating-linear-gradient(300deg, transparent 50%,
   rgb(255, 255, 255,1));
   background-size: 150px 250px;
+  transition: opacity 2s ease-in;
 }
 
 .crop {
+  opacity: 0;
   overflow: hidden;
   border-radius: 15px;
   width: 150px;
   height: 250px;
   display: inline-block;
   position: relative;
+  transition: opacity 1s ease-in;
 }
 
 img {
@@ -53,4 +62,13 @@ img {
   position: relative;
   margin-left: -3px;
   margin-top: -3px;
+}
+
+.hidden {
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+
+.fade-in {
+  opacity: 1;
 }
