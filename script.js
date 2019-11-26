@@ -3,7 +3,7 @@ document.querySelector('#start-button').addEventListener('click', prepareReading
 
 async function prepareReading() {
 
-  // creat clear button to reset page
+  // create clear button to reset page
 
   let clearButton = document.createElement('button');
   clearButton.innerHTML = 'Start Over';
@@ -27,7 +27,7 @@ async function prepareReading() {
   const result = await axios.get(`https://cors-anywhere.herokuapp.com/rws-cards-api.herokuapp.com/api/v1/cards/random?n=3`);
   document.querySelector('#question').classList.add('hidden');
   setTimeout(function () {
-    document.querySelector('#question').innerHTML = `<p>${question}</p>`;
+    document.querySelector('#question').innerHTML = `<p class="user-input">${question}</p>`;
     document.querySelector('#question').appendChild(clearButton);
     document.querySelector('#question').classList.add('fade-in');
   }, 1000);
@@ -65,10 +65,10 @@ async function prepareReading() {
 
     if (Math.random() >= 0.3) {
       cardDesc = result.data.cards[i].meaning_up;
-      cardContainer.innerHTML = `<h3>${cardName}</h3><p class="justify">${cardDesc}</p>`;
+      cardContainer.innerHTML = `<h3>${cardName}</h3><p class="description">${cardDesc}</p>`;
     } else {
       cardDesc = result.data.cards[i].meaning_rev;
-      cardContainer.innerHTML = `<h3>${cardName}, Reversed</h3><p class="justify">${cardDesc}</p>`;
+      cardContainer.innerHTML = `<h3>${cardName}, Reversed</h3><p class="description">${cardDesc}</p>`;
       cardArray[i].querySelector('.crop').style.transform = 'rotate(180deg)';
     }
 

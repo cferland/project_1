@@ -1,19 +1,20 @@
-@media (min-width: 600px) {
-  body {
-    background: #2a1a7e;
-    color: #eeffaa;
-    font-family: fantasy;
-  }
-}
-
 body {
+  background-color: #010010;
+  background-image: url('images/bg-image.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #ffcc00;
+  font-family: 'Berkshire Swash', cursive, serif;
+  font-weight: 400;
   text-align: center;
   margin: 0 auto;
-  padding: 30px;
+  padding: 20px;
 }
 
 input {
   width: 150px;
+  height: 20px;
   display: block;
   margin: 0 auto;
   text-align: center;
@@ -22,21 +23,60 @@ input {
 button {
   display: block;
   margin: 10px auto;
+  border: 1px solid #010010;
+  border-radius: 12px;
+  background-color: #ffcc00;
+  color: #010010;
+  width: 100px;
+  height: 25px;
+}
+
+button:hover {
+  background-color: #abcdef;
+}
+
+h1 {
+  font-size: 70px;
+}
+
+h2 {
+  font-size: 35px;
+  color: #abcdef;
+}
+
+h3 {
+  font-family: 'Forum', serif;
+  font-size: 20px;
+}
+
+p {
+  font-size: 25px;
+  color: #abcdef;
+}
+
+footer {
+  font-family: 'Forum', serif;
+  font-size: 10px;
+}
+
+.user-input {
+  font-family: 'Rock Salt', fantasy, cursive, sans-serif;
+  font-size: 20px;
 }
 
 .spread {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
-  padding: 30px;
+  padding: 20px 0;
 }
 
 .card {
   display: flex;
   flex-flow: column wrap;
   justify-content: flex-start;
+  margin: 0 50px;
   width: 150px;
-  margin: 0 15px;
 }
 
 .card-back {
@@ -44,7 +84,7 @@ button {
   width: 150px;
   height: 250px;
   border-radius: 15px;
-  background-color: gold;
+  background-color: #ffcc00;
   background-image: repeating-linear-gradient(60deg, transparent 50%,
   rgb(255, 255, 255,1)), repeating-linear-gradient(300deg, transparent 50%,
   rgb(255, 255, 255,1));
@@ -63,8 +103,11 @@ button {
   transition: opacity 1s ease-in;
 }
 
-.justify {
-  text-align: justify;
+.description {
+  text-align: center;
+  font-family: 'Forum', serif;
+  font-size: 15px;
+  font-weight: 400;
 }
 
 img {
@@ -82,4 +125,10 @@ img {
 
 .fade-in {
   opacity: 1;
+}
+
+@media (min-width: 2000px) {
+  body {
+    background-size: cover;
+  }
 }
