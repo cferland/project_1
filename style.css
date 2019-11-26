@@ -1,20 +1,27 @@
 @media (min-width: 600px) {
   body {
-    background: #7057a0;
+    background: #2a1a7e;
     color: #eeffaa;
     font-family: fantasy;
-    padding: 30px;
   }
 }
 
 body {
   text-align: center;
   margin: 0 auto;
+  padding: 30px;
 }
 
-.hidden {
-  opacity: 0;
-  transition: opacity 2s ease-in;
+input {
+  width: 150px;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+button {
+  display: block;
+  margin: 10px auto;
 }
 
 .spread {
@@ -54,6 +61,10 @@ body {
   display: inline-block;
   position: relative;
   transition: opacity 1s ease-in;
+}
+
+.justify {
+  text-align: justify;
 }
 
 img {

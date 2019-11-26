@@ -31,7 +31,7 @@ Cards will have a potential of showing up reversed within a reading. The meaning
 
 #### Clear Board
 
-There will be a button to clear the board and start a new reading at the bottom of the page. The previous question will disappear and the text input will reappear.
+There will be a button to clear the board and start a new reading at the top of the page. The previous question will disappear and the text input will reappear.
 
 ## Stretch Goals
 
