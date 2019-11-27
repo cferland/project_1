@@ -1,9 +1,8 @@
 body {
-  background-color: #010010;
-  background-image: url(images/bg-image.jpg);
+  background-color: #01000c;
+  background-image: url(images/star-bg.jpg);
   background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   color: #ffcc00;
   font-family: 'Berkshire Swash', cursive, serif;
   font-weight: 400;
@@ -32,7 +31,7 @@ button {
 }
 
 button:hover {
-  background-color: #abcdef;
+  background-color: #bbddff;
 }
 
 h1 {
@@ -41,7 +40,7 @@ h1 {
 
 h2 {
   font-size: 35px;
-  color: #abcdef;
+  color: #bbddff;
 }
 
 h3 {
@@ -68,7 +67,7 @@ footer {
   font-family: 'Forum', serif;
   font-size: 20px;
   padding: 0 150px;
-  color: #abcdef;
+  color: #bbddff;
 }
 
 .spread {
@@ -113,7 +112,7 @@ footer {
   font-family: 'Forum', serif;
   font-size: 15px;
   font-weight: 400;
-  color: #abcdef;
+  color: #bbddff;
 }
 
 img {
