@@ -21,7 +21,7 @@ https://stackoverflow.com/questions/37903824/how-can-i-make-infinite-flowing-bac
     background-position: 0 0;
   }
   to {
-    background-position: 0 10000px;
+    background-position: 10000px 10000px;
   }
 }
 
