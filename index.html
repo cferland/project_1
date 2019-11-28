@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,25 +9,46 @@
   <link rel="stylesheet" href="style.css">
   <title>Tarot Reading</title>
 </head>
+
 <body>
   <header>
     <h1>Tarot Reading</h1>
     <p class="instructions">
-      Have you come here seeking guidance? If it is answers you seek, then enter your question below. 
+      Have you come here seeking guidance? If it is answers you seek, then enter your question below.
       Otherwise, clear your mind and ask the cards nothing for a more general reading.
-      Three cards will be drawn to guide you, representing revevant key themes of the past, present, and future in regards to your question.
+      Three cards will be drawn to guide you, representing revevant key themes of the past, present, and future in
+      regards to your question.
     </p>
     <div id="question">
+      <select>
+        <option value='single'>Single Card</option>
+        <option value='three'>Three Card</option>
+        <option value='pyramid'>Pyramid</option>
+      </select>
       <input type="text" id="question-input" placeholder="Enter Your Question">
       <button id="start-button">Ask the Cards</button>
     </div>
-    
   </header>
   <main>
     <div class="spread">
-    <div class="card one"><h2 class="hidden">Past</h2><div class="card-back"><div class="crop"></div></div></div>
-    <div class="card two"><h2 class="hidden">Present</h2><div class="card-back"><div class="crop"></div></div></div>
-    <div class="card three"><h2 class="hidden">Future</h2><div class="card-back"><div class="crop"></div></div></div>
+      <div class="card one">
+        <h2 class="hidden">Past</h2>
+        <div class="card-back">
+          <div class="crop"></div>
+        </div>
+      </div>
+      <div class="card two">
+        <h2 class="hidden">Present</h2>
+        <div class="card-back">
+          <div class="crop"></div>
+        </div>
+      </div>
+      <div class="card three">
+        <h2 class="hidden">Future</h2>
+        <div class="card-back">
+          <div class="crop"></div>
+        </div>
+      </div>
     </div>
   </main>
   <footer>
@@ -35,4 +57,5 @@
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="script.js"></script>
 </body>
+
 </html>

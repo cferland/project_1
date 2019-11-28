@@ -1,5 +1,5 @@
 body {
-  background-color: #01000c;
+  background-color: #010010;
   background-image: url(images/star-bg.jpg);
   background-position: center;
   background-repeat: repeat;
@@ -23,6 +23,13 @@ https://stackoverflow.com/questions/37903824/how-can-i-make-infinite-flowing-bac
   to {
     background-position: 10000px 10000px;
   }
+}
+
+select {
+  color: #010010;
+  width: 100px;
+  height: 25px;
+  margin-bottom: 10px;
 }
 
 input {
@@ -86,7 +93,7 @@ footer {
 
 .spread {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   justify-content: center;
   padding: 20px 0;
 }
@@ -146,6 +153,17 @@ img {
   opacity: 1;
 }
 
+/*
+break class code from:
+https://tobiasahlin.com/blog/flexbox-break-to-new-row/
+*/
+
+.break {
+  flex-basis: 100%;
+  height: 0;
+  
+}
+
 @media (max-width: 800px) {
   .card {
     margin: 0 50px;
@@ -164,8 +182,5 @@ img {
 @media (max-width: 550px) {
   .instructions {
     padding: 20px;
-  }
-  .spread {
-    flex-wrap: wrap;
   }
 }
