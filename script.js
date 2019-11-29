@@ -83,14 +83,20 @@ async function prepareReading() {
   let question = document.querySelector('#question-input').value;
   let update = 'One moment please...';
   document.querySelector('#question').innerHTML = `<p>${update}</p>`;
-  const result = await axios.get(`https://cors-anywhere.herokuapp.com/rws-cards-api.herokuapp.com/api/v1/cards/random?n=${cardNum}`);
+  let result;
+  try {
+    result = await axios.get(`https://cors-anywhere.herokuapp.com/rws-cards-api.herokuapp.com/api/v1/cards/random?n=${cardNum}`);
+  }
+  catch {
+    alert('The cards are having a difficult time. Please refresh the page and try again.');
+  }
+  console.log(result);
   document.querySelector('#question').classList.add('hidden');
   setTimeout(function () {
     document.querySelector('#question').innerHTML = `<p class="user-input">${question}</p>`;
     document.querySelector('#question').appendChild(clearButton);
     document.querySelector('#question').classList.add('fade-in');
   }, 1000);
-  console.log(result);
 
   // display cards face-down on page
 
