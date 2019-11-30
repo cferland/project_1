@@ -8,6 +8,12 @@ async function prepareReading() {
   let clearButton = document.createElement('button');
   clearButton.innerHTML = 'Start Over';
   clearButton.addEventListener('click', function (event) {
+    document.querySelector('.instructions').innerHTML = `Welcome to the universe of tarot!
+    Consult the cards to receive a personalized reading that will provide insight into your life and whatever issues you may be facing.
+    Begin by selecting a spread for your reading, then enter your question below.
+    If you'd prefer a more general reading, then leave the question blank.
+    Once you've cleared your mind and focused on the question at hand, click the button and the cards will appear!`;
+    document.querySelector('.instructions').classList.remove('hidden', 'fade-in');
     document.querySelector('#question').innerHTML = `<select>
     <option value='single'>Single Card</option>
     <option value='three'>Three Card</option>
@@ -22,6 +28,7 @@ async function prepareReading() {
     document.querySelector('#start-button').addEventListener('click', prepareReading);
   });
 
+  document.querySelector('.instructions').classList.add('hidden');
   var cardNum;
   let layout = document.querySelector('select').value;
   if (layout === 'pyramid') {
@@ -59,21 +66,38 @@ async function prepareReading() {
     </div>
     </div>
     <div class="card six">
-    <h2 class="hidden">Unseen</h2>
+    <h2 class="hidden">Hidden</h2>
     <div class="card-back">
     <div class="crop"></div>
     </div>
     </div>`;
+    setTimeout(function () {
+      document.querySelector('.instructions').innerHTML = `The pyramid spread is useful for understanding all facets of a particular problem.
+      The top of the pyramid describes the ultimate action to be taken, while the middle cards provide insight into what is blocking your path and how to overcome it.
+      The bottom three cards address the problem itself, exploring its root causes and what hidden factors must be brought to light.`;
+      document.querySelector('.instructions').classList.add('fade-in');
+    }, 1000);
   } else if (layout === 'single') {
     cardNum = '1';
     document.querySelector('.spread').innerHTML = `<div class="card one">
-    <h2 class="hidden">Signifier</h2>
+    <h2 class="hidden">Focus</h2>
     <div class="card-back">
     <div class="crop"></div>
     </div>
     </div>`;
+    setTimeout(function () {
+      document.querySelector('.instructions').innerHTML = `Single card readings are perfect for general readings or simple questions.
+      One card will be pulled to address the focal point of the question at hand.
+      This reading can also be used for daily readings, allowing you to gain an understanding of whatever key themes are the focus of your current situation.`;
+      document.querySelector('.instructions').classList.add('fade-in');
+    }, 1000);
   } else {
     cardNum = '3';
+    setTimeout(function () {
+      document.querySelector('.instructions').innerHTML = `Three card readings address each matter by exploring the past, present, and future as they relate to each other.
+      Relevant themes from the past that may be affecting the current situation are described in the first card, while the last card describes a likely outcome if the pathway of the middle card continues to be followed.`;
+      document.querySelector('.instructions').classList.add('fade-in');
+    }, 1000);
   }
 
   // replace input field with user question
@@ -101,30 +125,30 @@ async function prepareReading() {
   // display cards face-down on page
 
   if (layout === 'pyramid') {
-  setTimeout(function () {
-    document.querySelector('.one .card-back').classList.add('fade-in');
-    document.querySelector('.one .hidden').classList.add('fade-in');
-  }, 1000);
-  setTimeout(function () {
-    document.querySelector('.two .card-back').classList.add('fade-in');
-    document.querySelector('.two .hidden').classList.add('fade-in');
-  }, 2000);
-  setTimeout(function () {
-    document.querySelector('.three .card-back').classList.add('fade-in');
-    document.querySelector('.three .hidden').classList.add('fade-in');
-  }, 2500);
-  setTimeout(function () {
-    document.querySelector('.four .card-back').classList.add('fade-in');
-    document.querySelector('.four .hidden').classList.add('fade-in');
-  }, 3000);
-  setTimeout(function () {
-    document.querySelector('.five .card-back').classList.add('fade-in');
-    document.querySelector('.five .hidden').classList.add('fade-in');
-  }, 3500);
-  setTimeout(function () {
-    document.querySelector('.six .card-back').classList.add('fade-in');
-    document.querySelector('.six .hidden').classList.add('fade-in');
-  }, 4000);
+    setTimeout(function () {
+      document.querySelector('.one .card-back').classList.add('fade-in');
+      document.querySelector('.one .hidden').classList.add('fade-in');
+    }, 1000);
+    setTimeout(function () {
+      document.querySelector('.two .card-back').classList.add('fade-in');
+      document.querySelector('.two .hidden').classList.add('fade-in');
+    }, 2000);
+    setTimeout(function () {
+      document.querySelector('.three .card-back').classList.add('fade-in');
+      document.querySelector('.three .hidden').classList.add('fade-in');
+    }, 2500);
+    setTimeout(function () {
+      document.querySelector('.four .card-back').classList.add('fade-in');
+      document.querySelector('.four .hidden').classList.add('fade-in');
+    }, 3000);
+    setTimeout(function () {
+      document.querySelector('.five .card-back').classList.add('fade-in');
+      document.querySelector('.five .hidden').classList.add('fade-in');
+    }, 3500);
+    setTimeout(function () {
+      document.querySelector('.six .card-back').classList.add('fade-in');
+      document.querySelector('.six .hidden').classList.add('fade-in');
+    }, 4000);
   } else if (layout === 'single') {
     setTimeout(function () {
       document.querySelector('.one .card-back').classList.add('fade-in');
