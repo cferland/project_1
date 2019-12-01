@@ -6,7 +6,7 @@ async function prepareReading() {
   // create clear button to reset page
 
   let clearButton = document.createElement('button');
-  clearButton.innerHTML = 'Start Over';
+  clearButton.innerHTML = 'New Reading';
   clearButton.addEventListener('click', function (event) {
     document.querySelector('.instructions').innerHTML = `Welcome to the universe of tarot!
     Consult the cards to receive a personalized reading that will provide insight into your life and whatever issues you may be facing.
