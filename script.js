@@ -72,9 +72,9 @@ async function prepareReading() {
     </div>
     </div>`;
     setTimeout(function () {
-      document.querySelector('.instructions').innerHTML = `The pyramid spread is useful for understanding all facets of a particular problem.
-      The top of the pyramid describes the ultimate action to be taken, while the middle cards provide insight into what is blocking your path and how to overcome it.
-      The bottom three cards address the problem itself, exploring its root causes and what hidden factors must be brought to light.`;
+      document.querySelector('.instructions').innerHTML = `The 'Pyramid' spread is useful for understanding all facets of a particular problem.
+      The topmost 'Action' card describes the ultimate path to be taken, while the 'Block' and 'Advice' cards provide insight into what obstacles you face and how to overcome them.
+      The bottom 'Problem' card address the issue itself, exploring its origin through the 'Root' card, while the 'Hidden' card illuminates that which must be brought to light.`;
       document.querySelector('.instructions').classList.add('fade-in');
     }, 1000);
   } else if (layout === 'single') {
@@ -86,16 +86,16 @@ async function prepareReading() {
     </div>
     </div>`;
     setTimeout(function () {
-      document.querySelector('.instructions').innerHTML = `Single card readings are perfect for general readings or simple questions.
-      One card will be pulled to address the focal point of the question at hand.
-      This reading can also be used for daily readings, allowing you to gain an understanding of whatever key themes are the focus of your current situation.`;
+      document.querySelector('.instructions').innerHTML = `Single card readings are perfect for simple questions.
+      One card will be pulled to address the focal point of the matter at hand.
+      This reading can also be used daily, allowing you to gain an understanding of whatever key themes are the focus of your current situation.`;
       document.querySelector('.instructions').classList.add('fade-in');
     }, 1000);
   } else {
     cardNum = '3';
     setTimeout(function () {
       document.querySelector('.instructions').innerHTML = `Three card readings address each matter by exploring the past, present, and future as they relate to each other.
-      Relevant themes from the past that may be affecting the current situation are described in the first card, while the last card describes a likely outcome if the pathway of the middle card continues to be followed.`;
+      Prior experiences that may be affecting the current situation are described in the 'Past' card, while the 'Future' card describes a likely outcome if the pathway of the 'Present' card continues to be followed.`;
       document.querySelector('.instructions').classList.add('fade-in');
     }, 1000);
   }
@@ -193,13 +193,16 @@ async function prepareReading() {
       cardArray[i].querySelector('.crop').style.transform = 'rotate(180deg)';
     }
 
-    // display cards when clicked
+    // flip cards and display image when clicked
 
     cardArray[i].appendChild(cardContainer);
     cardArray[i].addEventListener('click', function (event) {
+      cardArray[i].querySelector('.card-back').style.transform = 'rotateY(180deg)';
       cardContainer.appendChild(cardDesc);
-      cardArray[i].querySelector('.crop').classList.add('fade-in');
-      cardContainer.classList.add('fade-in');
+      setTimeout(function () {
+        cardArray[i].querySelector('.crop').classList.add('fade-in');
+        cardContainer.classList.add('fade-in');
+      }, 700);
     });
   }
 }

@@ -1,3 +1,5 @@
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.23, autoprefixer: v9.7.3) */
+
 body {
   background-color: #010010;
   background-image: url(images/star-bg.jpg);
@@ -9,13 +11,22 @@ body {
   text-align: center;
   margin: 0 auto;
   padding: 20px;
-  animation: background 500s linear infinite;
+  -webkit-animation: background 500s linear infinite;
+          animation: background 500s linear infinite;
 }
 
 /*
 background animation based on code from: 
 https://stackoverflow.com/questions/37903824/how-can-i-make-infinite-flowing-background-with-only-css/
 */
+@-webkit-keyframes background {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 10000px 10000px;
+  }
+}
 @keyframes background {
   from {
     background-position: 0 0;
@@ -26,9 +37,11 @@ https://stackoverflow.com/questions/37903824/how-can-i-make-infinite-flowing-bac
 }
 
 select {
-  color: #010010;
+  color: #ffcc00;
   width: 100px;
   height: 25px;
+  background-color: #010010;
+  border: 1px solid #ffcc00;
   margin-bottom: 10px;
 }
 
@@ -92,16 +105,30 @@ footer {
 }
 
 .spread {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 20px 0;
 }
 
 .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: column wrap;
-  justify-content: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   margin: 0 75px;
   width: 150px;
 }
@@ -112,9 +139,14 @@ footer {
   height: 250px;
   border-radius: 15px;
   background-color: #010010;
+  background-image: -o-linear-gradient(210deg, #abdcef, transparent), -o-repeating-linear-gradient(330deg, #abdcef, transparent 2%);
   background-image: linear-gradient(240deg, #abdcef, transparent), repeating-linear-gradient(120deg, #abdcef, transparent 2%);
   background-size: 150px 250px;
-  transition: opacity 2s ease-in;
+  -webkit-transition: opacity 2s ease-in, -webkit-transform 1s ease-in;
+  transition: opacity 2s ease-in, -webkit-transform 1s ease-in;
+  -o-transition: opacity 2s ease-in, transform 1s ease-in;
+  transition: opacity 2s ease-in, transform 1s ease-in;
+  transition: opacity 2s ease-in, transform 1s ease-in, -webkit-transform 1s ease-in;
 }
 
 .crop {
@@ -125,7 +157,6 @@ footer {
   height: 250px;
   display: inline-block;
   position: relative;
-  transition: opacity 1s ease-in;
 }
 
 .description {
@@ -146,6 +177,8 @@ img {
 
 .hidden {
   opacity: 0;
+  -webkit-transition: opacity 1s ease-in;
+  -o-transition: opacity 1s ease-in;
   transition: opacity 1s ease-in;
 }
 
@@ -159,7 +192,8 @@ https://tobiasahlin.com/blog/flexbox-break-to-new-row/
 */
 
 .break {
-  flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
   height: 0;
   
 }
