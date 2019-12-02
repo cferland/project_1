@@ -38,3 +38,13 @@ There is a button to clear the board and start a new reading at the top of the p
 #### CSS Animations
 
 CSS animations have been incorporated to make the interface more dynamic. There are fade effects for most of the page elements, as well as a flipping animation for each card when clicked. The background is also animated, scrolling across the screen to produce the effect of moving through space.
+
+## Known Issues
+
+#### API Load Time
+
+The API request sometimes takes too long to load. This seems to be a problem with the API itself, or could be related to utilizing CORS Anywhere. Sometimes the request stalls entirely before failing altogether. An alert has been implemented to handle such cases, urging the user to refresh the page and try again. Usually this issue resolves itself within a few minutes.
+
+#### Tarot Card Descriptions
+
+Descriptions for all the cards are pulled directly from the API. Some cards' descriptions contain typos, while a few reversed cards are left blank. The descriptions also lack any uniform structure, where some cards go into far more detail than others and the amount of text displayed is too variable. This issue may be resolved in the future by incorporating custom descriptions into the code.
