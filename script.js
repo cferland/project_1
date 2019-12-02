@@ -27,6 +27,8 @@ async function prepareReading() {
     <div class="card three"><h2 class="hidden">Future</h2><div class="card-back"><div class="crop"></div></div></div>`;
     document.querySelector('#start-button').addEventListener('click', prepareReading);
   });
+  
+  //update page based on selected spread
 
   document.querySelector('.instructions').classList.add('hidden');
   var cardNum;
